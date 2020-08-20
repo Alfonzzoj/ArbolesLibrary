@@ -1,4 +1,5 @@
-#include "funcionesArboles.h"
+#include <stdlib.h>
+#include "Arboles.h"
 /*
 * Busca un elemento en un arbol binario
 */
