@@ -1,3 +1,6 @@
+#ifndef _LIBRERIA
+#define _LIBRERIA
+
 typedef struct nodo
 {
     int elemento;
@@ -45,3 +48,8 @@ void insertarBalanceado(nodo_t **Arbolbp,int array[],int lim1,int lim2);
 int suppMaxcosto(nodo_t *arbol,int costeA,int costeMAX);
 // Retorna el maximo costo de un arbol 
 int maxCosto(nodo_t *arbolbp);
+// Pausa la pantalla brevemente
+void pausar();
+
+#include  "arboles.c"
+#endif

@@ -1,8 +1,8 @@
-#include <stdlib.h>
-#include "Arboles.h"
+#include "arboles.h"
 /*
-* Busca un elemento en un arbol binario
-*/
+* =================================================== Busca un elemento en un arbol binario
+*/ 
+
 int buscar(nodo_t *arbolbp, int elemento)
 {
     if (arbolbp == NULL)
@@ -14,9 +14,10 @@ int buscar(nodo_t *arbolbp, int elemento)
     else
         return buscar(arbolbp->der, elemento);
 }
+
 /*
-* Inserta un elemento en un arbol binario
-*/
+* =================================================== Inserta un elemento en un arbol binario
+*/ 
 int insertar(nodo_t **arbolbp, int elemento)
 {
     if (*arbolbp == NULL)
@@ -34,8 +35,8 @@ int insertar(nodo_t **arbolbp, int elemento)
         return insertar(&((*arbolbp)->der), elemento);
 }
 /*
- *Imprime un arbol binario
- */
+* =================================================== Imprime un arbol binario
+*/ 
 void imprimirNivel(nodo_t *arbolbp, int nivel)
 {
     int i;
@@ -48,8 +49,8 @@ void imprimirNivel(nodo_t *arbolbp, int nivel)
     imprimirNivel(arbolbp->izq, nivel + 1);
 }
 /*
-* Busca el menor elemento en un arbol binario
-*/
+* =================================================== Busca el menor elemento en un arbol binario
+*/ 
 int menor(nodo_t *arbolbp, int *elemento)
 {
     if (arbolbp == NULL)
@@ -60,8 +61,8 @@ int menor(nodo_t *arbolbp, int *elemento)
     return 1;
 }
 /*
-* Busca el mayor elemento en un arbol binario
-*/
+* =================================================== Busca el mayor elemento en un arbol binario
+*/ 
 int mayor(nodo_t *arbolbp, int *elemento)
 {
     if (arbolbp == NULL)
@@ -72,8 +73,8 @@ int mayor(nodo_t *arbolbp, int *elemento)
     return 1;
 }
 /*
-* Cuenta el numero de nodos en un arbol binario
-*/
+* =================================================== Cuenta el numero de nodos en un arbol binario
+*/ 
 int nro_nodos(nodo_t *arbolbp)
 {
     if (arbolbp == NULL)
@@ -81,8 +82,8 @@ int nro_nodos(nodo_t *arbolbp)
     return nro_nodos(arbolbp->izq) + nro_nodos(arbolbp->der) + 1;
 }
 /*
-* Elimina todos los nodos de un arbol binario
-*/
+* =================================================== Elimina todos los nodos de un arbol binario
+*/ 
 void borrar_arbol(nodo_t *arbolbp)
 {
     if (arbolbp == NULL)
@@ -92,9 +93,8 @@ void borrar_arbol(nodo_t *arbolbp)
     free(arbolbp);
 }
 /*
-* Borra un nodo de un arbol binario,
-* nota primera llamada raiz=borrar(raiz,clave);
-*/
+* =================================================== Borra un nodo de un arbol binario,nota primera llamada raiz=borrar(raiz,clave);
+*/ 
 nodo_t *borrar(nodo_t *arbolbp, int elemento)
 {
     nodo_t *ap;
@@ -141,8 +141,8 @@ nodo_t *borrar(nodo_t *arbolbp, int elemento)
     return arbolbp;
 }
 /*
-Calcula la altura de un arbol binario       
-*/
+* =================================================== Calcula la altura de un arbol binario   
+*/ 
 int h_arbol(nodo_t *arbolbp)
 {
     int hi = 0, hd = 0;
@@ -158,8 +158,8 @@ int h_arbol(nodo_t *arbolbp)
     return hi;
 }
 /*
-* Recorrido inorden de un arbol binario
-*/
+* =================================================== Recorrido inorden de un arbol binario
+*/ 
 void inorden(nodo_t *arbolbp)
 {
     if (arbolbp == NULL)
@@ -169,8 +169,8 @@ void inorden(nodo_t *arbolbp)
     inorden(arbolbp->der);
 }
 /*
-* Recorrido preorden de un arbol binario
-*/
+* =================================================== Recorrido preorden de un arbol binario
+*/ 
 void preorden(nodo_t *arbolbp)
 {
     if (arbolbp == NULL)
@@ -180,8 +180,8 @@ void preorden(nodo_t *arbolbp)
     preorden(arbolbp->der);
 }
 /*
-* Recorrido postorden de un arbol binario
-*/
+* =================================================== Recorrido postorden de un arbol binario
+*/ 
 void postorden(nodo_t *arbolbp)
 {
     if (arbolbp == NULL)
@@ -191,8 +191,8 @@ void postorden(nodo_t *arbolbp)
     printf("%d ", arbolbp->elemento);
 }
 /*
-* Suma los nodos del arbol
-*/
+* =================================================== Suma los nodos del arbol
+*/ 
 int suma(nodo_t *a)
 {
     if (!a)
@@ -200,18 +200,17 @@ int suma(nodo_t *a)
     return suma(a->izq) + suma(a->der) + a->elemento;
 }
 /*
-    calcula el promedio de todos los nodos del arbol
-*/
+* =================================================== Calcula el promedio de todos los nodos del arbol
+*/ 
 double promedio(nodo_t *a)
 {
     if (!a)
         return 0;
     return suma(a) / nro_nodos(a);
 }
-
 /*
-    calcula la suma de las hojas del arbol
-*/
+* =================================================== Calcula la suma de las hojas del arbol
+*/ 
 int sumahojas(nodo_t *a)
 {
     if (!a)
@@ -224,8 +223,8 @@ int sumahojas(nodo_t *a)
         return sumahojas(a->izq) + sumahojas(a->der);
 }
 /*
-* calcula el numero de hojas de un arbol
-*/
+* =================================================== Calcula el numero de hojas de un arbol
+*/ 
 int nrohojas(nodo_t *a)
 {
     if (!a)
@@ -238,8 +237,8 @@ int nrohojas(nodo_t *a)
         return nrohojas(a->izq) + nrohojas(a->der);
 }
 /*
-    calcula el promedio de las hojas de un arbol
-*/
+* ===================================================  Calcula el promedio de las hojas de un arbol
+*/ 
 double prom_hojas(nodo_t *a)
 {
     if (!a)
@@ -247,9 +246,9 @@ double prom_hojas(nodo_t *a)
     return sumahojas(a) / nrohojas(a);
 }
 
-//Insertar balanceado dado un arreglo de elementos
-//  ordenados en aforma ascendente los inserta en el arbol
-// lim1 y 2 son limetes superior e inferior del arreglo
+/*
+* =================================================== Insertar balanceado dado un arreglo de elementos,ordenados en aforma ascendente los inserta en el arbol, lim1 y 2 son limetes superior e inferior del arreglo
+*/ 
 void insertarBalanceado(nodo_t **Arbolbp, int array[], int lim1, int lim2)
 {
     if (Arbolbp == NULL)
@@ -263,9 +262,9 @@ void insertarBalanceado(nodo_t **Arbolbp, int array[], int lim1, int lim2)
     insertarBalanceado(&((*Arbolbp)->izq), array, lim1, lim2);
 }
 
-//Retorna el mayor costo de una ruta en el arbol(costo= ala suma de 
-// los valores contenidos en los nodos que forman parte de la ruta desde raiz)
-// a hoja (para un arbol no necesariamente de busqueda)
+/*
+* =================================================== Retorna el mayor costo de una ruta en el arbol(costo= ala suma de los valores contenidos en los nodos que forman parte de la ruta desde raiz) a hoja (para un arbol no necesariamente de busqueda)
+*/  
 int suppMaxcosto(nodo_t *arbol, int costeA, int costeMAX)
 {
     if (!arbol)
@@ -276,10 +275,21 @@ int suppMaxcosto(nodo_t *arbol, int costeA, int costeMAX)
         costeMAX = costeA;
     return costeMAX;
 }
-// Retorna el maximo costo de un arbol 
+/*
+* =================================================== Retorna el maximo costo de un arbol 
+*/ 
 int maxCosto(nodo_t *arbolbp)
 {
     if (!arbolbp)
         return 0;
     return suppMaxcosto(arbolbp, 0, 0);
+}
+
+/*
+ * ===================================================Pausa brevemente la pantalla
+*/
+void pausar()
+{
+    printf("Pulsa una letra para continuar \n");
+    char a = getchar();
 }
